@@ -15,4 +15,5 @@ class AppImages {
   static String newClassicImage = "assets/images/newClassic.jpeg";
   static String modernImage = "assets/images/modern.jpeg";
   static String generalImage = "assets/images/general.jpg";
+  static String profileImage = "assets/images/profile.jpg";
 }

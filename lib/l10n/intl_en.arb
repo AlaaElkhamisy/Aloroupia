@@ -41,6 +41,16 @@
     "offer": "Offer",
     "description": "Description",
     "readMore": "Read More",
-    "readLess": "Read Less"
+    "readLess": "Read Less",
+    "home": "Home",
+    "chat": "Chat",
+    "aiChat": "AI Chat",
+    "notifications": "Notifications",
+    "remove": "Remove",
+    "change": "Change",
+    "about": "About",
+    "tiktok": "TikTok",
+    "instgram": "Instagram",
+    "whatsapp": "WhatsApp"
 
 }

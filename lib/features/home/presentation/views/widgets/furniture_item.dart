@@ -73,7 +73,7 @@ class DetailsAlert extends StatefulWidget {
 }
 
 class _DetailsAlertState extends State<DetailsAlert> {
-  late bool isLiked;
+  bool isLiked = false;
 
   @override
   void initState() {

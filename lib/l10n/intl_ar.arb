@@ -41,6 +41,16 @@
     "offer": "عرض",
     "description": "الوصف",
     "readMore": "قراءة المزيد",
-    "readLess": "قراءة أقل"
+    "readLess": "قراءة أقل",
+    "home": "الرئيسية",
+    "chat": "الدردشة",
+    "aiChat": "دردشة الذكاء الاصطناعي",
+    "notifications": "الإشعارات",
+    "remove": "إزالة",
+    "change": "تغيير",
+    "about": "حول التطبيق",
+    "tiktok": "تيك توك",
+    "instgram": "إنستغرام",
+    "whatsapp": "واتساب"
 
 }

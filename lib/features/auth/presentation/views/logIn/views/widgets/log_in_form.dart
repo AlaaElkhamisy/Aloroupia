@@ -68,7 +68,7 @@ class LogInForm extends StatelessWidget {
               color: Colors.black,
               onPressed: () {
                 if (loginKey.currentState!.validate()) {
-                  context.pushReplacementNamed(AppRouter.homeView);
+                  context.pushReplacementNamed(AppRouter.navBarView);
                 }
               },
             ),
