@@ -1,12 +1,14 @@
 import 'package:aloroupia/core/router/app_router.dart';
 import 'package:aloroupia/features/ai_generate/presentation/views/ai_chat_view.dart';
 import 'package:aloroupia/features/ai_generate/presentation/views_model/cubit/ai_generator_cubit.dart';
+import 'package:aloroupia/features/auth/presentation/view_models/authCubit/auth_cubit.dart';
 import 'package:aloroupia/features/auth/presentation/views/forgot_password/views/create_new_password.dart';
 import 'package:aloroupia/features/auth/presentation/views/forgot_password/views/forgot_password.dart';
 import 'package:aloroupia/features/auth/presentation/views/forgot_password/views/verify_account_view.dart';
 import 'package:aloroupia/features/auth/presentation/views/logIn/views/log_in_view.dart';
 import 'package:aloroupia/features/auth/presentation/views/signUp/views/sign_up_view.dart';
 import 'package:aloroupia/features/chat/presentation/views/chat_view.dart';
+import 'package:aloroupia/features/chat/presentation/views_models/chat_cubit/chat_cubit.dart';
 import 'package:aloroupia/features/home/presentation/views/home_view.dart';
 import 'package:aloroupia/features/home/presentation/views/widgets/classic_view.dart';
 import 'package:aloroupia/features/home/presentation/views/widgets/modern_view.dart';
@@ -25,9 +27,25 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AppRouter.onBoardingView:
       return MaterialPageRoute(builder: (context) => const OnboaringView());
     case AppRouter.logInView:
-      return MaterialPageRoute(builder: (context) => const LogInView());
+      return MaterialPageRoute(
+        builder:
+            (context) => MultiBlocProvider(
+              providers: [
+                BlocProvider(create: (context) => AuthCubit()),
+                BlocProvider(create: (context) => ChatCubit()),
+              ],
+              //create: (context) => AuthCubit(),
+              child: const LogInView(),
+            ),
+      );
     case AppRouter.signUPView:
-      return MaterialPageRoute(builder: (context) => const SignUpView());
+      return MaterialPageRoute(
+        builder:
+            (context) => BlocProvider(
+              create: (context) => AuthCubit(),
+              child: const SignUpView(),
+            ),
+      );
     case AppRouter.forgotPasswordView:
       return MaterialPageRoute(builder: (context) => const ForgotPassword());
     case AppRouter.verifyView:
@@ -39,7 +57,17 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
     case AppRouter.homeView:
       return MaterialPageRoute(builder: (context) => const HomeView());
     case AppRouter.chatView:
-      return MaterialPageRoute(builder: (context) => const ChatView());
+      return MaterialPageRoute(
+        builder:
+            (context) => MultiBlocProvider(
+              providers: [
+                BlocProvider(create: (context) => AuthCubit()),
+                BlocProvider(create: (context) => ChatCubit()),
+              ],
+
+              child: const ChatView(),
+            ),
+      );
     case AppRouter.aiView:
       return MaterialPageRoute(
         builder:

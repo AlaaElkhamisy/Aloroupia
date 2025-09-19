@@ -1,22 +1,28 @@
 import 'package:aloroupia/constants.dart';
 import 'package:aloroupia/core/manager/cache/cache_helper.dart';
+import 'package:aloroupia/core/manager/functions/check_state_changes.dart';
 import 'package:aloroupia/core/manager/services/service_locator.dart';
 import 'package:aloroupia/core/router/app_router.dart';
 import 'package:aloroupia/core/router/router_function.dart';
 import 'package:aloroupia/features/ai_generate/data/ai_messaging_model.dart';
+import 'package:aloroupia/firebase_options.dart';
 import 'package:aloroupia/generated/l10n.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hive_flutter/adapters.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   setup_Service_Locator();
   await Hive.initFlutter();
   Hive.registerAdapter(AiMessagingModelAdapter());
   await Hive.openBox<AiMessagingModel>(kAiChatHistoryBox);
   await getIt<CacheHelper>().init();
+  checkStateChanges();
   runApp(DevicePreview(enabled: true, builder: (context) => Aloroupia()));
 }
 

@@ -29,3 +29,12 @@ class AiChatError extends AiChatState {
   @override
   List<Object?> get props => [message];
 }
+
+class AiChatSuccess extends AiChatState {
+  final String message;
+
+  const AiChatSuccess(this.message);
+
+  @override
+  List<Object?> get props => [message];
+}

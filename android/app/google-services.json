@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "119076477805",
+    "project_id": "aloroupia",
+    "storage_bucket": "aloroupia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119076477805:android:b45e2375d2617a7c409864",
+        "android_client_info": {
+          "package_name": "com.example.aloroupia"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaAanSypPUwBeRyQLjwH8iBEn4B1P01M8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

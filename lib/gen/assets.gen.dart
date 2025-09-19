@@ -62,6 +62,14 @@ class $AssetsIconsGen {
   AssetGenImage get facebook =>
       const AssetGenImage('assets/icons/facebook.png');
 
+  /// File path: assets/icons/greenCheck.png
+  AssetGenImage get greenCheck =>
+      const AssetGenImage('assets/icons/greenCheck.png');
+
+  /// File path: assets/icons/greyCheck.png
+  AssetGenImage get greyCheck =>
+      const AssetGenImage('assets/icons/greyCheck.png');
+
   /// File path: assets/icons/historyIcon.png
   AssetGenImage get historyIcon =>
       const AssetGenImage('assets/icons/historyIcon.png');
@@ -90,6 +98,10 @@ class $AssetsIconsGen {
   /// File path: assets/icons/notifiOut.png
   AssetGenImage get notifiOut =>
       const AssetGenImage('assets/icons/notifiOut.png');
+
+  /// File path: assets/icons/oneCheck.png
+  AssetGenImage get oneCheck =>
+      const AssetGenImage('assets/icons/oneCheck.png');
 
   /// File path: assets/icons/password.png
   AssetGenImage get password =>
@@ -120,6 +132,8 @@ class $AssetsIconsGen {
         chatFill,
         chatOut,
         facebook,
+        greenCheck,
+        greyCheck,
         historyIcon,
         homeFill,
         homeOut,
@@ -128,6 +142,7 @@ class $AssetsIconsGen {
         menu,
         notifiFill,
         notifiOut,
+        oneCheck,
         password,
         tiktok,
         user,
@@ -151,6 +166,9 @@ class $AssetsImagesGen {
   AssetGenImage get chairSketch =>
       const AssetGenImage('assets/images/chairSketch.png');
 
+  /// File path: assets/images/chatBG.jpg
+  AssetGenImage get chatBG => const AssetGenImage('assets/images/chatBG.jpg');
+
   /// File path: assets/images/classic.jpeg
   AssetGenImage get classic =>
       const AssetGenImage('assets/images/classic.jpeg');
@@ -164,6 +182,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/homeBoardImage.jpg
   AssetGenImage get homeBoardImage =>
       const AssetGenImage('assets/images/homeBoardImage.jpg');
+
+  /// File path: assets/images/lo.jpg
+  AssetGenImage get lo => const AssetGenImage('assets/images/lo.jpg');
 
   /// File path: assets/images/logInChair1.png
   AssetGenImage get logInChair1 =>
@@ -210,10 +231,12 @@ class $AssetsImagesGen {
         chair,
         chair3,
         chairSketch,
+        chatBG,
         classic,
         couch,
         general,
         homeBoardImage,
+        lo,
         logInChair1,
         logInChair2,
         logInIcon,

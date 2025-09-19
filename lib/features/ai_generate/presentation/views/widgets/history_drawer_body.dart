@@ -29,7 +29,7 @@ class _HistoryDrawerBodyState extends State<HistoryDrawerBody> {
           children: [
             //SizedBox(height: 20),
             Text('History', style: AppTextStyles.headLinesStyle(context)),
-            Expanded(child: HistoryListView()),
+            HistoryListView(),
           ],
         ),
       ),

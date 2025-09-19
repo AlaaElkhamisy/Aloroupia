@@ -569,6 +569,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Image saved to gallery`
+  String get imageSavedToGallery {
+    return Intl.message(
+      'Image saved to gallery',
+      name: 'imageSavedToGallery',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

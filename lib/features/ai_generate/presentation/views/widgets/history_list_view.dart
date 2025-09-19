@@ -29,12 +29,11 @@ class _HistoryListViewState extends State<HistoryListView> {
               context,
             ).generatedImages!;
         if (state is FetchAllGeneratedImagesSuccess) {
-          return Stack(
-            alignment: Alignment.bottomRight,
-            children: [
-              Expanded(
-                //height: 300,
-                child: ListView.separated(
+          return Expanded(
+            child: Stack(
+              alignment: Alignment.bottomRight,
+              children: [
+                ListView.separated(
                   itemCount: generatedImages.length,
                   separatorBuilder:
                       (context, index) => Divider(
@@ -67,24 +66,24 @@ class _HistoryListViewState extends State<HistoryListView> {
                     );
                   },
                 ),
-              ),
-              if (generatedImages.isNotEmpty)
-                ClearHistoryIconBtn(
-                  onPressed: () async {
-                    Navigator.of(context).pop(); // Close dialog first
-                    setState(() {
-                      generatedImages.clear(); // Then clear images
-                    });
-                    final box = await Hive.openBox<AiMessagingModel>(
-                      kAiChatHistoryBox,
-                    );
-                    await box.clear();
-                    BlocProvider.of<FetchAllGeneratedImagesCubit>(
-                      context,
-                    ).fetchAllGeneratedImages(); // Then fetch new images
-                  },
-                ),
-            ],
+                if (generatedImages.isNotEmpty)
+                  ClearHistoryIconBtn(
+                    onPressed: () async {
+                      Navigator.of(context).pop(); // Close dialog first
+                      setState(() {
+                        generatedImages.clear(); // Then clear images
+                      });
+                      final box = await Hive.openBox<AiMessagingModel>(
+                        kAiChatHistoryBox,
+                      );
+                      await box.clear();
+                      BlocProvider.of<FetchAllGeneratedImagesCubit>(
+                        context,
+                      ).fetchAllGeneratedImages(); // Then fetch new images
+                    },
+                  ),
+              ],
+            ),
           );
         }
         return SizedBox();

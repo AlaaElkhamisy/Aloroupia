@@ -61,6 +61,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgoyYourPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "imageSavedToGallery":
+            MessageLookupByLibrary.simpleMessage("Image saved to gallery"),
         "instgram": MessageLookupByLibrary.simpleMessage("Instagram"),
         "letStartAndPickUp": MessageLookupByLibrary.simpleMessage(
             "let\'s Start and Pick Up your Awesome Collections"),

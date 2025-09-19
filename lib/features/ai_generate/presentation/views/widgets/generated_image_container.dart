@@ -19,6 +19,8 @@ class GeneratedImageContainerWidget extends StatelessWidget {
           showToast(state.message, Colors.red);
         } else if (state is AiChatGenerated) {
           showToast("Image generated successfully!", AppColors.appCamelC);
+        } else if (state is AiChatSuccess) {
+          showToast(state.message, AppColors.appCamelC);
         }
       },
       builder: (context, state) {
@@ -58,7 +60,11 @@ class GeneratedImageContainerWidget extends StatelessWidget {
                   const SizedBox(height: 16),
                   Prompt(prompt: state.prompt),
                   const SizedBox(height: 16),
-                  BottomButtons(cubit: cubit),
+                  BottomButtons(
+                    cubit: cubit,
+                    generatedImage: state.image,
+                    path: "Pictures/${state.prompt.replaceAll(' ', '_')}.png",
+                  ),
                   const SizedBox(height: 16),
                 ],
               ),

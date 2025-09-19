@@ -62,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgoyYourPassword":
             MessageLookupByLibrary.simpleMessage("نسيت كلمة المرور"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "imageSavedToGallery":
+            MessageLookupByLibrary.simpleMessage("تم حفظ الصورة في المعرض"),
         "instgram": MessageLookupByLibrary.simpleMessage("إنستغرام"),
         "letStartAndPickUp": MessageLookupByLibrary.simpleMessage(
             "لنبدأ ونلتقط مجموعاتك الرائعة"),

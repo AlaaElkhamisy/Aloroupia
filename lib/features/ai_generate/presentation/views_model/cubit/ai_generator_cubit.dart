@@ -2,12 +2,17 @@ import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
 import 'package:aloroupia/constants.dart';
+import 'package:aloroupia/core/manager/colors/app_colors.dart';
+import 'package:aloroupia/core/manager/functions/custom_toast.dart';
 import 'package:aloroupia/features/ai_generate/data/ai_messaging_model.dart';
+import 'package:aloroupia/generated/l10n.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:http/http.dart' as http;
+
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:share_plus/share_plus.dart';
@@ -71,6 +76,16 @@ class AiChatCubit extends Cubit<AiChatState> {
     promptController.text = item.prompt;
     _generatedImage = Uint8List.fromList(item.generatedImage);
     emit(AiChatGenerated(_generatedImage!, item.prompt));
+  }
+
+  Future<void> saveImageToGallery(BuildContext context) async {
+    try {
+      const MethodChannel channel = MethodChannel('gallery_saver');
+      await channel.invokeMethod('saveImage', {'imageData': _generatedImage});
+      showToast(S.of(context).imageSavedToGallery, AppColors.appCamelC);
+    } on PlatformException catch (e) {
+      print("Failed to save image: ${e.message}");
+    }
   }
 
   Future<void> shareImage() async {
